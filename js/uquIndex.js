@@ -2,10 +2,11 @@
 const java1Card = document.getElementById("java1Card");
 const java1Ul = document.getElementById("java1Ul");
 const liArray = [
-    {text: "LAB 1 (شرح)",           link: "JAVA_1_EXP/LAB_1.html",           apiKey: 1},
-    {text: "ASSIGNMENT 1 (شرح)",    link: "JAVA_1_EXP/ASSIGNMENT_1.html",    apiKey: 4},
-    {text: "LAB 2 (شرح)",           link: "JAVA_1_EXP/LAB_2.html",           apiKey: 6},
-    {text: "LAB 3 (شرح)",           link: "JAVA_1_EXP/LAB_3.html",           apiKey: 9},
+    {text: "LAB 1 (شرح)",           link: "JAVA_1_EXP/LAB_1.html#exp",           apiKey: 1},
+    {text: "ASSIGNMENT 1 (شرح)",    link: "JAVA_1_EXP/ASSIGNMENT_1.html#exp",    apiKey: 4},
+    {text: "LAB 2 (شرح)",           link: "JAVA_1_EXP/LAB_2.html#exp",           apiKey: 6},
+    {text: "LAB 3 (شرح)",           link: "JAVA_1_EXP/LAB_3.html#exp",           apiKey: 9},
+    {text: "ASSIGNMENT 2 (شرح)",    link: "JAVA_1_EXP/ASSIGNMENT_2.html#exp",    apiKey: 10},
 ];
 
 function getValue(key, callback) {
