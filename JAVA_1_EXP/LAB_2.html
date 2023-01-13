@@ -30,7 +30,13 @@
     </h5>
     <span class="text-info" href="#exp">الشرح في <a class="link-info" href="#exp">الأسفل</a></span>
 
-    <pre class="prettyprint" dir="ltr">
+    <div class="text-center my-4">
+        <a class="btn btn-primary w-75" onclick="showFullCode(this);">
+            اضغط لاظهار الكود
+        </a>
+    </div>
+
+    <pre id="fullScript" class="prettyprint" dir="ltr" hidden>
 package edu.uqu.cs;
 
 /*
@@ -176,13 +182,46 @@ public class App {
         نقدر نحط خصائص لطريقة الطباعة بين ال% والحرف اللي يمثل نوع المتغير، مثلا ال.2 معناتها رقمين بعد الفاصلة فقط.
         <br>
         ونقدر نحط اكثر من متغير في الطباعة، اهم شي انها تكون بنفس الترتيب
+        <br>
+        <a href="https://www.baeldung.com/java-printstream-printf" target="_blank">شرح مفصل</a>
     </p>
 
 <hr class="thicc-hr">
 
 
 
-
+<script>
+    let count = -1;
+    async function showFullCode(btn) {
+        console.log(count);
+        count++;
+        switch (count) {
+            case 0:
+                btn.innerHTML = "متأكد؟";
+                break;
+            case 1:
+                btn.innerHTML = "طيب شفت الشرح؟";
+                break;
+            case 2:
+                btn.innerHTML = "ارجع بعد ما تشوفه";
+                break;
+            case 3:
+                await fetch(`https://rra5400.azurewebsites.net/Main/ForceUpdateKeyValue?key=6`)  
+                .then((response) => response.json())
+                .then((data) => {
+                    btn.innerHTML = `ترا في ${data[1]} غيرك عندهم نفس الكود، اذا متاكد اضغط مرة زيادة وراح يطلع لك الكود`;
+                });
+                break;
+            default:
+                btn.innerHTML = "WATCHING WE ARE, TROLLING WE DO";
+                btn.classList = "btn btn-danger";
+                btn.onclick = "";
+                document.getElementById("fullScript").hidden = false;
+                open("https://cdn.vox-cdn.com/thumbor/Si2spWe-6jYnWh8roDPVRV7izC4=/0x0:1192x795/1400x788/filters:focal(596x398:597x399)/cdn.vox-cdn.com/uploads/chorus_asset/file/22312759/rickroll_4k.jpg");
+                break;
+        }
+    }
+</script>
 
 
 
