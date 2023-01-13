@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        التعلقيات
+    </title>
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>    
+
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+
+    p {
+        color: white;
+    }
+
+    .square {
+        border-radius: 0px;
+    }
+</style>
+
+<script>
+    function postComment() {
+        let content = document.getElementById("inp").value;
+        $.ajax ({
+            url: 'https://rra5400.azurewebsites.net/Main/PostComment',
+            data: {
+                content: content
+            },
+            success: function(msg) {
+                window.location.reload();
+            }
+        });
+    }
+
+    window.onload = function() {
+        $.ajax ({
+            type: 'GET',
+            url: 'https://rra5400.azurewebsites.net/Main/GetComments',
+            success: function(response) {
+                response.reverse().forEach(comment => {
+                    document.getElementById("commentsList").innerHTML += `
+                        <div class="row mt-3">
+                            <div class="col-10 text-end text-white" id="comment${comment.Id}">
+                                ${comment.content}
+                            </div>
+                            <div class="col-2 text-start">
+                                Anonymous
+                                <span>
+                                    ${comment.createdDateTime}
+                                </span>
+                            </div>
+                        </div>
+                        <hr class="thicc-hr mt-2">
+                    `;
+                });
+            }
+        });
+    }
+</script>
+
+</head>
+
+<body class="container" dir="rtl">
+
+    <div class="row mt-5">
+        <div class="input-group" dir="ltr">
+            <input id="inp" type="text" class="form-control w-75 square" placeholder="ادخل التعليق">
+            <a class="btn btn-primary form-control w-25 square" onclick="postComment();">ارسل</a>
+        </div>
+    </div>
+
+    <div id="commentsList">
+        <hr class="thicc-hr mt-5">
+
+    </div>
+
+</body>
+
+</html>
