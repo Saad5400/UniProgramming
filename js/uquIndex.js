@@ -2,7 +2,7 @@
 const java1Card = document.getElementById("java1Card");
 const java1Ul = document.getElementById("java1Ul");
 const liArray = [
-    {text: "Comment Section",       link: "../comments.html",                    apiKey: 11},
+    {text: "Comment Section",       link: "comments.html",                    apiKey: 11},
     {text: "LAB 1 (شرح)",           link: "JAVA_1_EXP/LAB_1.html#exp",           apiKey: 1},
     {text: "ASSIGNMENT 1 (شرح)",    link: "JAVA_1_EXP/ASSIGNMENT_1.html#exp",    apiKey: 4},
     {text: "LAB 2 (شرح)",           link: "JAVA_1_EXP/LAB_2.html#exp",           apiKey: 6},
