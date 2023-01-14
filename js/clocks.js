@@ -66,7 +66,6 @@ function focusOnClock() {
     let date = new Date();
     let hours = date.getHours();
     hours = hours % 12;
-    hours = hours ? hours : 12; // the hour '0' should be '12'
     let hh = hours * 30,
     mm = date.getMinutes() * 6,
     ss = date.getSeconds() * 6;

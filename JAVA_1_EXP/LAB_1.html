@@ -18,11 +18,19 @@
     p {
         color: white;
     }
+
+    body {
+        -moz-user-select: none; 
+        -webkit-user-select: none; 
+        -ms-user-select:none; 
+        user-select:none;
+        -o-user-select:none;
+    }
 </style>
 
 </head>
 
-<body class="container" dir="rtl" id="fullCode">
+<body class="container" dir="rtl" id="fullCode"  unselectable="on" onselectstart="return false;" onmousedown="return false;">
 
     <br>
     <h5 class="text-primary">
