@@ -1,7 +1,7 @@
 
 const body = document.body;
 
-function genrateClock(seconds) {
+function genrateClock(seconds, minutes, hours) {
     /** 
     <div class="clock__circle">
 
@@ -37,24 +37,24 @@ function genrateClock(seconds) {
 
     body.appendChild(clockCircle);
 
-    let minutes = seconds / 60,
-        hours = minutes / 60;
-
+    //console.log(`${hours}:${minutes}:${seconds}`)
     let hh = hours * 30,
         mm = minutes * 6,
         ss = seconds * 6;
 
-    clockCircle.id = `M${ss}`;
+    clockCircle.id = `${ss}${mm}${hh}`;
 
     clockHour.style.transform = `rotateZ(${hh + mm / 12}deg)`;
     clockMinutes.style.transform = `rotateZ(${mm}deg)`;
     clocSeconds.style.transform = `rotateZ(${ss}deg)`;
 }
 
-let minutesInDay = 6 * 60 * 30;
-
-for (let i = 0; i <= minutesInDay; i++) {
-    genrateClock(i);
+for (let i = 0; i < 12; i++) {
+    for (let j = 0; j < 60; j++) {
+        for (let k = 0; k < 60; k++) {
+            genrateClock(k, j, i);
+        }
+    }
 }
 
 function focusOnClock() {
@@ -62,8 +62,16 @@ function focusOnClock() {
     for (let i = 0; i < clocks.length; i++) {
         clocks[i].style.opacity = 0.5;
     }
+
     let date = new Date();
-    let targetId = `M${date.getHours() * 60 + date.getMinutes() * 6 + date.getSeconds() * 6}`;
+    let hours = date.getHours();
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    let hh = hours * 30,
+    mm = date.getMinutes() * 6,
+    ss = date.getSeconds() * 6;
+
+    let targetId = `${ss}${mm}${hh}`;
     let target = document.getElementById(targetId);
     target.style.opacity = 1;
     target.scrollIntoView();
