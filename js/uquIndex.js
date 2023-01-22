@@ -9,6 +9,7 @@ const liArray = [
     {text: "LAB 3 شرح",           link: "JAVA_1_EXP/LAB_3.html#exp",           apiKey: 9},
     {text: "ASSIGNMENT 2 شرح",    link: "JAVA_1_EXP/ASSIGNMENT_2.html#exp",    apiKey: 10},
     {text: "LAB 4 شرح",           link: "JAVA_1_EXP/LAB_4.html#exp",           apiKey: 12},
+    {text: "LAB 5 شرح",           link: "JAVA_1_EXP/LAB_5.html#exp",           apiKey: 13},
 ];
 
 function getValue(key, callback) {
@@ -149,6 +150,7 @@ let interval = setInterval(function () {
         vid.hidden = true;
         skipEl.hidden = true;
         mainDiv.hidden = true;
+        
         setTimeout(() => {
             let el = document.getElementById("audio_player");
             if (el.paused) {
