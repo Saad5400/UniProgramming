@@ -150,6 +150,7 @@ let interval = setInterval(function () {
         vid.hidden = true;
         skipEl.hidden = true;
         mainDiv.hidden = true;
+        initBackground();
         
         setTimeout(() => {
             let el = document.getElementById("audio_player");
