@@ -4,9 +4,9 @@ function initBackground() {
   c.height = window.innerHeight;
   c.width = window.innerWidth;
 
-  var binary = "ERROR 404 UNDEFINED NAN KYS";
+  var binary = "";
 
-  binary = binary.split(" ");
+  binary = binary.split("");
 
 
   var font_size = 20;
