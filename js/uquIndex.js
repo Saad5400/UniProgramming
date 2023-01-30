@@ -10,6 +10,7 @@ const liArray = [
     {text: "ASSIGNMENT 2 شرح",    link: "JAVA_1_EXP/ASSIGNMENT_2.html#exp",    apiKey: 10},
     {text: "LAB 4 شرح",           link: "JAVA_1_EXP/LAB_4.html#exp",           apiKey: 12},
     {text: "LAB 5 شرح",           link: "JAVA_1_EXP/LAB_5.html#exp",           apiKey: 13},
+    {text: "LAB 6 شرح",           link: "JAVA_1_EXP/LAB_6.html#exp",           apiKey: 14},
 ];
 
 function getValue(key, callback) {
