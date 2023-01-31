@@ -4,7 +4,7 @@ function initBackground() {
   c.height = window.innerHeight;
   c.width = window.innerWidth;
 
-  var binary = "";
+  var binary = "01";
 
   binary = binary.split("");
 

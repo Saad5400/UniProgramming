@@ -112,7 +112,7 @@ document.getElementById("quote").innerHTML = quotes[randomNum];
 const card = document.querySelector(".card");
 const cardtoggle = document.querySelector(".toggle");
 cardtoggle.onclick = function () {
-card.classList.toggle("active");
+    card.classList.toggle("active");
 };
 
 // screen clicks counter
@@ -152,6 +152,10 @@ let interval = setInterval(function () {
         skipEl.hidden = true;
         mainDiv.hidden = true;
         initBackground();
+        
+        setTimeout(() => {
+            cardtoggle.click();
+        }, 500);
         
         setTimeout(() => {
             let el = document.getElementById("audio_player");
