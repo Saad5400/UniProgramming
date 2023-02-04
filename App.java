@@ -1,61 +1,3 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>
-        امثلة الفاينل
-    </title>
-
-    <link rel="stylesheet" href="../../css/bootstrap.css">
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?lang=java&amp;skin=sunburst"></script>
-
-<style>
-    html {
-        scroll-behavior: smooth;
-    }
-
-    p {
-        color: white;
-    }
-
-    .videoWrapper {
-        position: relative;
-        padding-bottom: 56.25%;
-        /* 16:9 */
-        padding-top: 25px;
-        height: 0;
-    }
-
-    .videoWrapper iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-
-</style>
-
-</head>
-
-<body class="container" dir="rtl" id="fullCode">
-
-    <br>
-    <div class="row">
-        <h5 class="text-primary col">
-            ملف App.java
-        </h5>
-        <h5 class="col text-start">
-            <a href="../index.html">
-                الرئيسية
-            </a>
-        </h5>
-    </div>
-    <span class="text-info" href="#exp">الشرح في <a class="link-info" href="#exp">الأسفل</a></span>
-
-
-<pre id="fullScript" class="prettyprint" dir="ltr">
 import java.util.Scanner;
 
 class App {
@@ -64,7 +6,7 @@ class App {
 
     static void p1() {
         // Pl : Write a program that will keep reading numbers until 9999 is entered and then prints the sum of all the
-        // even numbers only.
+        // odd numbers only.
 
         // declare
         int number = 0;
@@ -85,7 +27,7 @@ class App {
             
             // check if number is even
             /* for p2 just make it == 1 to check if it's odd */
-            if (number % 2 == 0) {
+            if (number % 2 == 1) {
                 // add number to sum
                 sum += number;
             }
@@ -98,7 +40,7 @@ class App {
     public static void p3() {
 
         // P3: Write a program that will compute the product of the first n positive even integers. For example, if n
-        // is 4, it should compute 2 x 4 8.
+        // is 4, it should compute 2 x 4 = 8.
 
         // ask user to enter n
         System.out.println("Enter n: ");
@@ -117,9 +59,7 @@ class App {
         for (int i = 1; i <= n; i++) {
 
             // check if it's even
-            if (i % 2 == 0) {
-                product *= i;
-            }
+            product *= i;
 
             /* For p4, again just make it == 1 to check if it's odd, for example:
                 * if (i % 2 == 1) {
@@ -156,7 +96,7 @@ class App {
     }
 
     public static void p7() {
-        // P 7: Write a program that finds the number of solutions to the equation x+y+z = 200 and prints them on the
+        // P 7: Write a program that finds the number of solutions to the equation 2*x+y+z = 150 and prints them on the
         // screen where x, y, and z are non-negative integers.
 
         // decalre var to hold answe
@@ -167,17 +107,12 @@ class App {
         // loop for each possible value, and if it's == 200 then add 1 to the count
 
         for (int x = 0; x <= 200; x++) {
-
             for (int y = 0; y <= 200; y++) {
-
-                for (int z = 0; z <= 200; z++) {
-
-                    if (x + y + z == 200) {
+                    if (2*x + y == 150) {
                         count += 1;
                     }
                 }
             }
-        }
 
         System.out.println("There are " + count + " possible solutions");
     }
@@ -218,7 +153,7 @@ class App {
         }
 
         // since there is no space at the end we need to manually add the last word
-        encoded += word + ' ';
+        encoded += word;
 
         System.out.println(encoded);
     }
@@ -312,7 +247,7 @@ class App {
         // p7();
 
         // run this one alone, don't run other methods before it
-        // p8();
+        p8();
 
         // p9();
         // p10();
@@ -322,27 +257,3 @@ class App {
     }
 
 }
-</pre>
-
-<hr class="thicc-hr">
-    
-<h5 class="text-primary mt-4" id="exp">
-    الشرح
-</h5>
-
-<br>
-<div class="videoWrapper">
-    <iframe width="560" height="349" src="https://www.youtube.com/embed/XVxT_4ZMk-o" allowfullscreen></iframe>
-</div>
-<hr class="thicc-hr">
-
-
-<a class="link-info" href="#fullCode">الكود كامل</a>
-
-<div class="space">
-
-</div>
-
-</body>
-
-</html>
