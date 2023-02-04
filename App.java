@@ -243,11 +243,11 @@ class App {
 
         // p1();
         // p3();
-        // p6();
+        p6();
         // p7();
 
         // run this one alone, don't run other methods before it
-        p8();
+        // p8();
 
         // p9();
         // p10();
