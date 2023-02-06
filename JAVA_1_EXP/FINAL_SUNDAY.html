@@ -31,7 +31,9 @@
         <div class="text-primary col">
             <a href="#max">sum max 2</a> <br>
             <a href="#min">product minimum 2</a> <br>
-            <a href="#avg">avrage max 2</a>
+            <a href="#avg">avrage max 2</a> <br>
+            <a href="#factors">factors</a> <br>
+            <a href="#divisors">divisors</a>
         </div>
         <h5 class="col text-start">
             <a href="../index.html">
@@ -39,13 +41,13 @@
             </a>
         </h5>
     </div>
-<hr class="thicc-hr">
-<p dir="ltr">
+<hr class="thicc-hr my-5">
+<p dir="ltr" id="max">
     Write a program that keeps reading integers until a negative number is entered.  
     After a negative number is entered, the program will print the sum of the maximum two integers entered 
 </p>
 
-<pre class="prettyprint" dir="ltr" id="max">
+<pre class="prettyprint" dir="ltr">
 import java.util.Scanner;
 
 public class App {
@@ -86,12 +88,12 @@ public class App {
     }
 }
 </pre>
-<hr class="thicc-hr">
-<p dir="ltr">
+<hr class="thicc-hr my-5">
+<p dir="ltr" id="min">
     Write a program that keeps reading integers until a negative number is entered.  
     After a negative number is entered, the program will print the product of the minimum two integers entered 
 </p>
-<pre class="prettyprint" dir="ltr" id="min">
+<pre class="prettyprint" dir="ltr">
 import java.util.Scanner;
 
 public class App {
@@ -143,12 +145,12 @@ public class App {
     }
 }
 </pre>
-<hr class="thicc-hr">
-<p dir="ltr">
+<hr class="thicc-hr my-5">
+<p dir="ltr" id="avg">
     Write a program that keeps reading integers until a negative number is entered.  
     After a negative number is entered, the program will print the average of the maximum two integers entered 
 </p>
-<pre class="prettyprint" dir="ltr" id="avg">
+<pre class="prettyprint" dir="ltr">
 import java.util.Scanner;
 
 public class App {
@@ -200,6 +202,78 @@ public class App {
         }
     }
 }    
+</pre>
+
+<hr class="thicc-hr my-5">
+<p dir="ltr" id="factors">
+    Write a program that reads an integer number and counts the number of its factors 
+    Program must display these numbers as well.
+</p>
+<pre class="prettyprint" dir="ltr">
+import java.util.Scanner;
+
+public class App {
+    // main method where the program starts to execute
+    public static void main(String [] args) {
+        // create a Scanner object to read input from the user
+        Scanner sc = new Scanner(System.in);
+        // prompt the user to enter an integer
+        System.out.print("Enter an integer: ");
+        // read the integer entered by the user
+        int num = sc.nextInt();
+        // variable to keep track of the number of factors
+        int count = 0;
+        // display the header for the list of factors
+        System.out.print("Factors: ");
+        // loop through all the numbers from 1 to `num` inclusive
+        for (int i = 1; i <= num; i++) {
+            // check if `i` is a factor of `num`
+            if (num % i == 0) {
+                // if `i` is a factor, print it and increment the count
+                System.out.print(i + " ");
+                count++;
+            }
+        }
+        // print a new line for readability
+        System.out.println();
+        // display the number of factors
+        System.out.println("Number of factors: " + count);
+    }
+}
+</pre>
+
+<hr class="thicc-hr my-5">
+<p dir="ltr" id="divisors">
+    Write a program in java
+    that first reads a number, then prints all its divisors 
+    A number is said to be a divisor if it divides another number without having a reminder
+    A divisor should not be 1 or the number itself  
+</p>
+<pre class="prettyprint" dir="ltr">
+import java.util.Scanner;
+
+public class App {
+    public static void main(String[] args) {
+        // Create a Scanner object to read input from the user
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt the user to enter a number
+        System.out.print("Enter a number: ");
+        int number = scanner.nextInt();
+
+        // Print the header for the divisors
+        System.out.println("Divisors of " + number + ":");
+
+        // Loop through all the numbers from 2 to the number-1
+        for (int i = 2; i < number; i++) {
+            // Check if the current number is a divisor
+            if (number % i == 0) {
+                // If it is a divisor, print it
+                System.out.println(i);
+            }
+        }
+    }
+}
 </pre>
 
 <hr class="thicc-hr">
